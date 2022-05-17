@@ -16,6 +16,12 @@ I'm attempting to learn Rust, and keeping notes while working through the [Rust 
 - Imports look similar to Python but with double colons (::) instead of periods (.)
   - `use std::io;` vs  import `import os`
   - `use std::io::prelude::*;` vs `import os.prelude`
-- String formating is similar to Python, using `{}` to insert values into a string.ar
+- String formating is similar to Python, using `{}` to insert values into a string
+- `println!` is similar to `console.log` in JavaScript.
 
+### 3. Common Programming Concepts
 
+- variables are immutable by defaults
+- `const  style is`ALL_CAPS_WITH_UNDERSCORE`
+- "shadowing" is basically assigning a new value to a variable that already exists with old value
+-
