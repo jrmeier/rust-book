@@ -1,24 +1,33 @@
-fn main() {
-    let x = maybe(119);
+use std::io;
 
-    println!("the value of x is: {}", x);
+fn main() {
+    loop{
+        println!("Please input a number to process ");
+        
+        let mut input_number = String::new();
+        io::stdin()
+         .read_line(&mut input_number)
+         .expect("Failed to read that line");
+
+         let input_number = match input_number.trim().parse() {
+             Ok(input_number) => input_number,
+             Err(_) => continue,
+         };
+        
+        let fib_number = fib(input_number, 0);
+
+        println!("fibonacci number is: {fib_number}")
+
+
+    }
+
 }
 
-// fn five() -> i32 {
-//     return 10 * 10;
-//     // 5
-// }
-
-// fn plus_one(x: i32) -> i32 {
-//     x + 1
-// }
-
-// fn maybe(number: i32)->i32 {
-//     if number > 100{
-//         println!("Woah, that's real big number.")
-//     } else {
-//         println!("Okay, this is reasonable.")
-//     }
-
-//     return if number % 5 == 0 { 10 + number } else {number - 5};
-// }
+fn fib(number: u64, total: u16) -> u64 {
+    if number <= 1 {
+        return 1;
+    }
+    else {
+        return fib(number - 1, total + 1) + fib(number - 2, total + 1);
+    }
+}
